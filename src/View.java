@@ -49,7 +49,7 @@ public class View {
 				{
 					for(int i=0;i<c.mc.getCustomer().size();i++)
 						System.out.println(c.mc.getCustomer().get(i).getName()+"\t"+c.mc.getCustomer().get(i).getMobile()+"\t"+
-										c.mc.getCustomer().get(i).getAdress()+"\t"+c.mc.getCustomer().get(i).getId());
+										c.mc.getCustomer().get(i).getAddress()+"\t"+c.mc.getCustomer().get(i).getId());
 				}
 			
 				if(command.equals("Commit"))

@@ -48,7 +48,7 @@ public class Customer {
 		return this.mobile;
 	}
 	
-	public String getAdress()
+	public String getAddress()
 	{
 		return this.address;
 	}

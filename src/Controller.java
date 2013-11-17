@@ -1,10 +1,16 @@
 
 
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 /**
  * Представляет собой Класс-контроллер для работы с Model Class {link MCustomer}
  * @author STAS
@@ -91,7 +97,7 @@ public class Controller {
 	{
 		try
 		{
-			StringBuffer a=new StringBuffer();
+			/*StringBuffer a=new StringBuffer();
 			PrintWriter out = new PrintWriter(new File("Customer.txt").getAbsoluteFile());
 			for(int i=0;i<mc.customer.size();i++)
 			{
@@ -112,7 +118,17 @@ public class Controller {
 		                                    mo.order.get(i).getId()+'\n');
 			}
 			out.print(a);
-			out.close();	
+			out.close();*/
+			
+			XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(
+			          new FileOutputStream("Order.xml")));
+			encoder.writeObject(this.mo.order);
+			encoder.close();
+			
+			encoder = new XMLEncoder(new BufferedOutputStream(
+			          new FileOutputStream("Custom.xml")));
+			encoder.writeObject(this.mc.customer);
+			encoder.close();
 		
 		}
 		catch(IOException e)
@@ -128,7 +144,7 @@ public class Controller {
 	{
 		try
 		{
-			String a;
+			/*String a;
 			BufferedReader reader = new BufferedReader(new FileReader("Customer.txt"));
 			while ((a=reader.readLine())!=null)
 			{
@@ -155,7 +171,18 @@ public class Controller {
 				Add_Order(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
 						Integer.parseInt(param[4]), Integer.parseInt(param[4]));
 			}
-			reader.close();
+			reader.close();*/
+			XMLDecoder decoder = new XMLDecoder(new FileInputStream("Order.xml"));
+			ArrayList<Order> or=(ArrayList<Order>)decoder.readObject();
+			this.mo.order=or;
+			decoder.close();
+			
+			decoder = new XMLDecoder(new FileInputStream("Custom.xml"));
+			ArrayList<Customer> mc=(ArrayList<Customer>)decoder.readObject();
+			this.mc.customer=mc;
+			decoder.close();
+			
+		     
 		}
 		catch(IOException e)
 		{
