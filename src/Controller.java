@@ -84,6 +84,9 @@ public class Controller {
 		else System.out.println("Запись неизменена.");
 	}
 	
+	/**
+	 * Сохранить сущности в файлы Customer.txt и Order.txt
+	 */
 	public void FileSave()
 	{
 		try
