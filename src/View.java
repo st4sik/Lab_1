@@ -34,7 +34,7 @@ public class View {
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
 					c.Add_Order(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
-						Integer.parseInt(param[4]), Integer.parseInt(param[4]));
+						Integer.parseInt(param[3]), Integer.parseInt(param[4]));
 					System.out.println("Запись добавлена");
 				}
 			

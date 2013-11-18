@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_45" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Order">
+    <void property="customer">
+     <int>2</int>
+    </void>
+    <void property="date">
+     <string>18.11.2013</string>
+    </void>
+    <void property="id">
+     <int>10</int>
+    </void>
+    <void property="number">
+     <int>1</int>
+    </void>
+    <void property="summ">
+     <int>1000</int>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Order">
+    <void property="customer">
+     <int>1</int>
+    </void>
+    <void property="date">
+     <string>19.11.2013</string>
+    </void>
+    <void property="id">
+     <int>11</int>
+    </void>
+    <void property="number">
+     <int>100</int>
+    </void>
+    <void property="summ">
+     <int>123231</int>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Order">
+    <void property="customer">
+     <int>2</int>
+    </void>
+    <void property="date">
+     <string>09.12.2013</string>
+    </void>
+    <void property="id">
+     <int>12</int>
+    </void>
+    <void property="number">
+     <int>12032</int>
+    </void>
+    <void property="summ">
+     <int>2020323</int>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
