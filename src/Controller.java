@@ -254,7 +254,7 @@ public class Controller {
 			catch(CheckFileException e)
 			{
 				System.out.println(e.toString());
-				System.exit(-1);
+				System.exit(-2);
 			}
 			
 		     

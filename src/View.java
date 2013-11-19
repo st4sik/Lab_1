@@ -25,7 +25,7 @@ public class View {
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
 					c.Add_Customer(param[0], param[1], param[2], Integer.parseInt(param[3]));
-					System.out.println("Запись добавлена");
+					
 				}
 			
 				if(command.equals("Add_Order"))
@@ -35,7 +35,7 @@ public class View {
 					String param[]=comm.split(", ");
 					c.Add_Order(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
 						Integer.parseInt(param[3]), Integer.parseInt(param[4]));
-					System.out.println("Запись добавлена");
+					
 				}
 			
 				if(command.equals("Print_Order"))
