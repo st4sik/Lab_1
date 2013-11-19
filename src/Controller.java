@@ -14,6 +14,18 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
 /**
  * Class Controller Model Class {link MCustomer}
  * @author STAS
@@ -241,12 +253,30 @@ public class Controller {
 						Integer.parseInt(param[4]), Integer.parseInt(param[4]));
 			}
 			reader.close();*/
+			File f1=new File("Order.xml");
+			File f2=new File("Customer.xml");
+			if (!f1.exists() || !f2.exists())
+			{
+					System.out.println("File Order.xml or Customer.xml is not found. Reload a program.");
+					XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(
+					          new FileOutputStream("Order.xml")));
+					encoder.writeObject(this.mo.order);
+					encoder.close();
+					
+					encoder = new XMLEncoder(new BufferedOutputStream(
+					          new FileOutputStream("Customer.xml")));
+					encoder.writeObject(this.mc.customer);
+					encoder.close();
+					System.exit(-1);
+						
+			}
+			
 			XMLDecoder decoder = new XMLDecoder(new FileInputStream("Order.xml"));
 			ArrayList<Order> or=(ArrayList<Order>)decoder.readObject();
 			this.mo.order=or;
 			decoder.close();
 			
-			decoder = new XMLDecoder(new FileInputStream("Custom.xml"));
+			decoder = new XMLDecoder(new FileInputStream("Customer.xml"));
 			ArrayList<Customer> mc=(ArrayList<Customer>)decoder.readObject();
 			this.mc.customer=mc;
 			decoder.close();
