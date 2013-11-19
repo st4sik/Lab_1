@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /**
- * Представляет собой Класс-контроллер для работы с Model Class {link MCustomer}
+ * Class Controller Model Class {link MCustomer}
  * @author STAS
  * @version 1.0
  *
@@ -25,11 +25,11 @@ public class Controller {
 	MOrder mo=new MOrder();
 	
 	/**
-	 * Функция для добавление записи в сущность "Order"
-	 * @param number Номер заказа
-	 * @param customer Номер заказчика
-	 * @param date Дата
-	 * @param summ Сумма заказа
+	 * The Function is to add a record in "Order"
+	 * @param number Number Order 
+	 * @param customer Number Customer
+	 * @param date Data
+	 * @param summ Amount Order
 	 * @param id ID
 	 */
 	public void Add_Order(int number, int customer, String date, int summ, int id)
@@ -38,25 +38,25 @@ public class Controller {
 		{
 			if(item.getId()==id)
 			{
-				System.out.println("Ошибка уникальности");
+				System.out.println("Error uniqueness.");
 				return;
 			}
 		}
 		this.mo.Add(number, customer, date, summ, id);
-		System.out.println("Запись добавлена");
+		System.out.println("Record is added.");
 	}
 	
 	/**
-	 * Фунция для удаление записи в сущности "Order"
+	 * The Function is to delete a record in "Order"
 	 * @param id ID
 	 */
 	public void Delete_Order(int id)
 	{
 		if(mo.Delete(id))
 		{
-			System.out.println("Запись удалена.");
+			System.out.println("Record is deleted.");
 		}
-		else System.out.println("Запись неудалена.");
+		else System.out.println("Record doesn't deleted.");
 			
 	}
 	
@@ -64,15 +64,15 @@ public class Controller {
 	{
 		if (mo.Change(number, customer, date, summ, id))
 		{
-			System.out.println("Запись изменена.");
+			System.out.println("Record is changed.");
 		}
-		else System.out.println("Запись неизменена.");
+		else System.out.println("Record doesn't changed.");
 	}
 	/**
-	 * Фунция для добавления записи в сущность "Customer"
-	 * Параметр @param name Имя заказчика
-	 * @param mobile Телефон
-	 * @param address Адрес
+	 * The Function is to add a record in "Customer"
+	 * @param name Name Customer
+	 * @param mobile Phone
+	 * @param address Address
 	 * @param id ID
 	 */
 	public void Add_Customer(String name, String mobile, String address, int id)
@@ -81,24 +81,24 @@ public class Controller {
 		{
 			if(item.getId()==id)
 			{
-				System.out.println("Ошибка уникальности");
+				System.out.println("Error uniqueness.");
 				return;
 			}
 		}
 		this.mc.Add(name, mobile, address, id);
-		System.out.println("Запись добавлена");
+		System.out.println("Record is added.");
 	}
 	/**
-	 * Фунция для удаления записи в сущности "Customer"
+	 * The Function is to delete a record in "Customer"
 	 * @param id ID Заказчика
 	 */
 	public void Delete_Customer(int id)
 	{
 		if(mc.Delete(id))
 		{
-			System.out.println("Запись удалена.");
+			System.out.println("Record is deleted.");
 		}
-		else System.out.println("Запись неудалена.");
+		else System.out.println("Record doesn't deleted.");
 		
 	}
 
@@ -106,14 +106,18 @@ public class Controller {
 	{
 		if (mc.Change(name, mobile, address, id))
 		{
-			System.out.println("Запись изменена.");
+			System.out.println("Record is changed.");
 		}
-		else System.out.println("Запись неизменена.");
+		else System.out.println("Record doesn't changed.");
 	}
 	
+	/**
+	 * The Function is to check duplicates in files.
+	 * @throws CheckFileException
+	 */
 	private void Check() throws CheckFileException
 	{
-		/*ID, Значение*/
+		
 		Map<Integer,Integer> count=new HashMap<Integer, Integer>();
 		Integer s=0;
 		for(int i=0;i<this.mo.order.size();i++)
@@ -156,7 +160,7 @@ public class Controller {
 			
 	}
 	/**
-	 * Сохранить сущности в файлы Customer.txt и Order.txt
+	 * Save files Order.xml and Customer.xml
 	 */
 	public void FileSave()
 	{
@@ -203,7 +207,7 @@ public class Controller {
 	}
 	
 	/**
-	 * Фунция для загрузки файла Customer.txt в сущность "Customer" и загрузки файла Order.txt в сущность "Order"
+	 * The Function is to load from Customer.xml and Order.xml to Customer.xml and Order.xml
 	 */
 	public void FileLoad()
 	{
@@ -261,7 +265,8 @@ public class Controller {
 		}
 		catch(IOException e)
 		{
-		 System.out.println(e.toString());
+			System.out.println(e.toString());
+			
 		}
 
 	}

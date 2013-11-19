@@ -14,14 +14,14 @@ public class View {
 			Controller c=new Controller();
 			c.FileLoad();
 			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-			while (command!="Exit")
+			while (!command.equals("Exit"))
 			{
-				System.out.println("Вызов справки: Help. Введите команду: \n");
-				command=in.readLine();
+				System.out.println("Manual: Help. Enter the command: \n");
+				
 			
 				if(command.equals("Add_Customer"))
 				{
-					System.out.println("Название, Телефон, Адрес, ID\n");
+					System.out.println("Name, Phone, Address, ID\n");
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
 					c.Add_Customer(param[0], param[1], param[2], Integer.parseInt(param[3]));
@@ -30,7 +30,7 @@ public class View {
 			
 				if(command.equals("Add_Order"))
 				{
-					System.out.println("Номер, Заказчик, Дата, Сумма Заказа, ID ");
+					System.out.println("Number Order, Number Customer, Date, Amount Order, ID ");
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
 					c.Add_Order(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
@@ -55,25 +55,25 @@ public class View {
 				if(command.equals("Commit"))
 				{
 					c.FileSave();
-					System.out.println("Записи сохранены");
+					System.out.println("Records are saved.");
 				}
 			
 				if(command.equals("Delete_Order"))
 				{
-					System.out.println("Введите ID: ");
+					System.out.println("Enter the ID: ");
 					int id=Integer.parseInt(in.readLine());
 					c.Delete_Order(id);
 				}
 				if(command.equals("Delete_Customer"))
 				{
-					System.out.println("Введите ID: ");
+					System.out.println("Enter the ID: ");
 					int id=Integer.parseInt(in.readLine());
 					c.Delete_Customer(id);
 				}
 				
 				if(command.equals("Change_Order"))
 				{
-					System.out.println("Номер, Заказчик, Дата, Сумма заказа, ID\n");
+					System.out.println("Number Order, Number Customer, Date, Amount Order, ID\n");
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
 					c.Change_Order(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
@@ -82,7 +82,7 @@ public class View {
 			
 				if(command.equals("Change_Customer"))
 				{
-					System.out.println("Название, Телефон, Адрес, ID\n");
+					System.out.println("Name, Phone, Address, ID\n");
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
 					c.Change_Customer(param[0], param[1], param[2], Integer.parseInt(param[3]));
@@ -91,17 +91,20 @@ public class View {
 				if(command.equals("Help"))
 				{
 					System.out.println(
-							"Add_Order - добавление записи в таблицу \"Заказы\"\n"+
-							"Add_Customer - добавление записи в таблицу \"Заказчики\"\n"+
-							"Change_Order - изменить запись в таблице \"Заказы\"\n"+
-							"Change_Customer - изменить запись в таблице \"Заказчики\"\n"+
-							"Delete_Order - удалить запись в таблице \"Заказы\"\n"+
-							"Delete_Customer - удалить запись в таблице \"Заказчики\"\n"+
-							"Print_Order - просмотр таблицы \"Заказы\"\n"+
-							"Print_Customer - просмотр таблицы \"Заказчики\"\n"+
-							"Commit - сохранить изменения");
+							"Add_Order - adding a record to the table \"Order\"\n"+
+							"Add_Customer - adding a record to the table \"Customer\"\n"+
+							"Change_Order - change a record to the table \"Order\"\n"+
+							"Change_Customer - change a record to the table \"Customer\"\n"+
+							"Delete_Order - delete a record to the table \"Order\"\n"+
+							"Delete_Customer - change a record to the table \"Customer\"\n"+
+							"Print_Order - print \"Order\"\n"+
+							"Print_Customer - print \"Customer\"\n"+
+							"Commit - save the changes\n"+
+							"Exit - exit");
 					}
+				command=in.readLine();
 				}
+			
 			} 
 		catch (IOException e)
 		{

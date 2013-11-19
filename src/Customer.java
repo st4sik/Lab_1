@@ -1,15 +1,15 @@
 /**
- * Предстwавляет собой сущность "Заказчик".
+ * Class Customer
  * @author STASСтас
  * @version 1.0
  */
 public class Customer {
 	
-	/** Имя заказчика. */
+	/** Name Customer. */
 	private String name;
-	/** Телефон. */
+	/** Phone. */
 	private String mobile;
-	/** Адрес. */
+	/** Address. */
 	private String address;
 	/** ID. */
 	private int id;
@@ -24,7 +24,7 @@ public class Customer {
 	}
 	/**
 	 * 
-	 * Инициализирует поле {@link Customer#mobile}
+	 * Initialization a field {@link Customer#mobile}
 	 * @see Customer
 	 */
 	public void setMobile(String mobile)
