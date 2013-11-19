@@ -109,6 +109,11 @@ public class View {
 		catch (IOException e)
 		{
 			System.out.println(e.toString());
-		}	
+		}
+		catch (NullPointerException e)
+		{
+			System.out.println(e.toString());
+			System.exit(-1);
+		}
 	}
 }
