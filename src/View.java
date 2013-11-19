@@ -24,7 +24,7 @@ public class View {
 					System.out.println("Name, Phone, Address, ID\n");
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
-					c.Add_Customer(param[0], param[1], param[2], Integer.parseInt(param[3]));
+					c.AddToCustomer(param[0], param[1], param[2], Integer.parseInt(param[3]));
 					
 				}
 			
@@ -33,7 +33,7 @@ public class View {
 					System.out.println("Number Order, Number Customer, Date, Amount Order, ID ");
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
-					c.Add_Order(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
+					c.AddToOrder(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
 						Integer.parseInt(param[3]), Integer.parseInt(param[4]));
 					
 				}
@@ -62,13 +62,13 @@ public class View {
 				{
 					System.out.println("Enter the ID: ");
 					int id=Integer.parseInt(in.readLine());
-					c.Delete_Order(id);
+					c.DeleteFromOrder(id);
 				}
 				if(command.equals("Delete_Customer"))
 				{
 					System.out.println("Enter the ID: ");
 					int id=Integer.parseInt(in.readLine());
-					c.Delete_Customer(id);
+					c.DeleteFromCustomer(id);
 				}
 				
 				if(command.equals("Change_Order"))
@@ -76,7 +76,7 @@ public class View {
 					System.out.println("Number Order, Number Customer, Date, Amount Order, ID\n");
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
-					c.Change_Order(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
+					c.ChangeToOrder(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
 							Integer.parseInt(param[3]), Integer.parseInt(param[4]));
 				}
 			
@@ -85,7 +85,7 @@ public class View {
 					System.out.println("Name, Phone, Address, ID\n");
 					String comm=in.readLine();
 					String param[]=comm.split(", ");
-					c.Change_Customer(param[0], param[1], param[2], Integer.parseInt(param[3]));
+					c.ChangeToCustomer(param[0], param[1], param[2], Integer.parseInt(param[3]));
 				}
 				
 				if(command.equals("Help"))

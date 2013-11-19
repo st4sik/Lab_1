@@ -3,7 +3,6 @@
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -44,7 +43,7 @@ public class Controller {
 	 * @param summ Amount Order
 	 * @param id ID
 	 */
-	public void Add_Order(int number, int customer, String date, int summ, int id)
+	public void AddToOrder(int number, int customer, String date, int summ, int id)
 	{
 		for(Order item : this.mo.order)
 		{
@@ -62,7 +61,7 @@ public class Controller {
 	 * The Function is to delete a record in "Order"
 	 * @param id ID
 	 */
-	public void Delete_Order(int id)
+	public void DeleteFromOrder(int id)
 	{
 		if(mo.Delete(id))
 		{
@@ -72,7 +71,7 @@ public class Controller {
 			
 	}
 	
-	public void Change_Order(int number, int customer, String date, int summ, int id)
+	public void ChangeToOrder(int number, int customer, String date, int summ, int id)
 	{
 		if (mo.Change(number, customer, date, summ, id))
 		{
@@ -87,7 +86,7 @@ public class Controller {
 	 * @param address Address
 	 * @param id ID
 	 */
-	public void Add_Customer(String name, String mobile, String address, int id)
+	public void AddToCustomer(String name, String mobile, String address, int id)
 	{
 		for(Customer item: this.mc.customer)
 		{
@@ -102,9 +101,9 @@ public class Controller {
 	}
 	/**
 	 * The Function is to delete a record in "Customer"
-	 * @param id ID Заказчика
+	 * @param id ID Customer
 	 */
-	public void Delete_Customer(int id)
+	public void DeleteFromCustomer(int id)
 	{
 		if(mc.Delete(id))
 		{
@@ -114,7 +113,7 @@ public class Controller {
 		
 	}
 
-	public void Change_Customer(String name, String mobile, String address, int id)
+	public void ChangeToCustomer(String name, String mobile, String address, int id)
 	{
 		if (mc.Change(name, mobile, address, id))
 		{
