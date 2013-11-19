@@ -10,7 +10,10 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 /**
  * Представляет собой Класс-контроллер для работы с Model Class {link MCustomer}
  * @author STAS
@@ -31,7 +34,16 @@ public class Controller {
 	 */
 	public void Add_Order(int number, int customer, String date, int summ, int id)
 	{
+		for(Order item : this.mo.order)
+		{
+			if(item.getId()==id)
+			{
+				System.out.println("Ошибка уникальности");
+				return;
+			}
+		}
 		this.mo.Add(number, customer, date, summ, id);
+		System.out.println("Запись добавлена");
 	}
 	
 	/**
@@ -65,7 +77,16 @@ public class Controller {
 	 */
 	public void Add_Customer(String name, String mobile, String address, int id)
 	{
+		for(Customer item: this.mc.customer)
+		{
+			if(item.getId()==id)
+			{
+				System.out.println("Ошибка уникальности");
+				return;
+			}
+		}
 		this.mc.Add(name, mobile, address, id);
+		System.out.println("Запись добавлена");
 	}
 	/**
 	 * Фунция для удаления записи в сущности "Customer"
@@ -90,6 +111,50 @@ public class Controller {
 		else System.out.println("Запись неизменена.");
 	}
 	
+	private void Check() throws CheckFileException
+	{
+		/*ID, Значение*/
+		Map<Integer,Integer> count=new HashMap<Integer, Integer>();
+		Integer s=0;
+		for(int i=0;i<this.mo.order.size();i++)
+		{
+			if(count.containsKey(this.mo.order.get(i).getId())==true)
+			{
+				s++;
+			}
+			count.put(this.mo.order.get(i).getId(), s++);
+			s=0;	
+		}
+		
+		for(Integer i:count.values())
+		{
+			if(i>=1)
+			{
+				throw new CheckFileException();
+			}
+		}
+		
+		count=new HashMap<Integer, Integer>();
+		s=0;
+		for(int i=0;i<this.mc.customer.size();i++)
+		{
+			if(count.containsKey(this.mc.customer.get(i).getId())==true)
+			{
+				s++;
+			}
+			count.put(this.mc.customer.get(i).getId(), s++);
+			s=0;	
+		}
+		
+		for(Integer i:count.values())
+		{
+			if(i==2)
+			{
+				throw new CheckFileException();
+			}
+		}	
+			
+	}
 	/**
 	 * Сохранить сущности в файлы Customer.txt и Order.txt
 	 */
@@ -128,12 +193,12 @@ public class Controller {
 			encoder = new XMLEncoder(new BufferedOutputStream(
 			          new FileOutputStream("Custom.xml")));
 			encoder.writeObject(this.mc.customer);
-			encoder.close();
-		
+			encoder.close();				
 		}
 		catch(IOException e)
 		{
 			System.out.println(e.toString());
+			System.exit(0);
 		}		 	
 	}
 	
@@ -181,6 +246,16 @@ public class Controller {
 			ArrayList<Customer> mc=(ArrayList<Customer>)decoder.readObject();
 			this.mc.customer=mc;
 			decoder.close();
+			
+			try
+			{
+				Check();
+			}
+			catch(CheckFileException e)
+			{
+				System.out.println(e.toString());
+				System.exit(-1);
+			}
 			
 		     
 		}
