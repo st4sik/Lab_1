@@ -1,0 +1,18 @@
+Лабораторная работа 1 (Справочная система)
+
+Основной класс для запуска View.class.
+
+Файлы сущностей: Order.xml, Customer.xml.
+
+Основные команды:
+
+Add_Order - adding a record to the table "Order"
+Add_Customer - adding a record to the table "Customer"
+Change_Order - change a record to the table "Order"
+Change_Customer - change a record to the table "Customer"
+Delete_Order - delete a record to the table "Order"
+Delete_Customer - change a record to the table "Customer"
+Print_Order - print "Order"
+Print_Customer - print "Customer"
+Commit - save the changes
+Exit - exit

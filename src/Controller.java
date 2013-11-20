@@ -43,7 +43,7 @@ public class Controller {
 	 * @param summ Amount Order
 	 * @param id ID
 	 */
-	public void AddToOrder(int number, int customer, String date, int summ, int id)
+	public void addToOrder(int number, int customer, String date, int summ, int id)
 	{
 		for(Order item : this.mo.order)
 		{
@@ -61,7 +61,7 @@ public class Controller {
 	 * The Function is to delete a record in "Order"
 	 * @param id ID
 	 */
-	public void DeleteFromOrder(int id)
+	public void deleteFromOrder(int id)
 	{
 		if(mo.Delete(id))
 		{
@@ -71,7 +71,7 @@ public class Controller {
 			
 	}
 	
-	public void ChangeToOrder(int number, int customer, String date, int summ, int id)
+	public void changeToOrder(int number, int customer, String date, int summ, int id)
 	{
 		if (mo.Change(number, customer, date, summ, id))
 		{
@@ -86,7 +86,7 @@ public class Controller {
 	 * @param address Address
 	 * @param id ID
 	 */
-	public void AddToCustomer(String name, String mobile, String address, int id)
+	public void addToCustomer(String name, String mobile, String address, int id)
 	{
 		for(Customer item: this.mc.customer)
 		{
@@ -103,7 +103,7 @@ public class Controller {
 	 * The Function is to delete a record in "Customer"
 	 * @param id ID Customer
 	 */
-	public void DeleteFromCustomer(int id)
+	public void deleteFromCustomer(int id)
 	{
 		if(mc.Delete(id))
 		{
@@ -113,7 +113,7 @@ public class Controller {
 		
 	}
 
-	public void ChangeToCustomer(String name, String mobile, String address, int id)
+	public void changeToCustomer(String name, String mobile, String address, int id)
 	{
 		if (mc.Change(name, mobile, address, id))
 		{
@@ -126,7 +126,7 @@ public class Controller {
 	 * The Function is to check duplicates in files.
 	 * @throws CheckFileException
 	 */
-	private void Check() throws CheckFileException
+	private void check() throws CheckFileException
 	{
 		
 		Map<Integer,Integer> count=new HashMap<Integer, Integer>();
@@ -173,7 +173,7 @@ public class Controller {
 	/**
 	 * Save files Order.xml and Customer.xml
 	 */
-	public void FileSave()
+	public void fileSave()
 	{
 		try
 		{
@@ -220,7 +220,7 @@ public class Controller {
 	/**
 	 * The Function is to load from Customer.xml and Order.xml to Customer.xml and Order.xml
 	 */
-	public void FileLoad()
+	public void fileLoad()
 	{
 		try
 		{
@@ -282,7 +282,7 @@ public class Controller {
 			
 			try
 			{
-				Check();
+				check();
 			}
 			catch(CheckFileException e)
 			{
