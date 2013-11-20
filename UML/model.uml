@@ -193,7 +193,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_p6JiQFG-EeOMyOHl8cIuFg" name="setOrder">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_wJMecFG-EeOMyOHl8cIuFg" name="order" type="_iVG9IFG2EeOMyOHl8cIuFg"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_xF5XQFG-EeOMyOHl8cIuFg" name="Add">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_xF5XQFG-EeOMyOHl8cIuFg" name="add">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_1jb5kFG-EeOMyOHl8cIuFg" name="number">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
@@ -206,7 +206,7 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_56EioFG-EeOMyOHl8cIuFg" name="summ" type="_iVG9IFG2EeOMyOHl8cIuFg"/>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_7Hy6AFG-EeOMyOHl8cIuFg" name="id"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="__7EbwFG-EeOMyOHl8cIuFg" name="Delete" concurrency="guarded">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__7EbwFG-EeOMyOHl8cIuFg" name="delete" concurrency="guarded">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_FZZssFG_EeOMyOHl8cIuFg" name="id">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
@@ -214,7 +214,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_QtcMwFG_EeOMyOHl8cIuFg" name="Change">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QtcMwFG_EeOMyOHl8cIuFg" name="change">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_U8ltwFG_EeOMyOHl8cIuFg" name="numer">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
@@ -259,7 +259,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_7pPkwFG_EeOMyOHl8cIuFg" name="setCustomer">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_AtrvAFHAEeOMyOHl8cIuFg" name="customer" type="_ff_UsFG3EeOMyOHl8cIuFg"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_CBkYwFHAEeOMyOHl8cIuFg" name="Add">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_CBkYwFHAEeOMyOHl8cIuFg" name="add">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_En4TsFHAEeOMyOHl8cIuFg" name="name">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedParameter>
@@ -273,7 +273,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_YV3hQFHAEeOMyOHl8cIuFg" name="Delete">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_YV3hQFHAEeOMyOHl8cIuFg" name="delete">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_cnr7wFHAEeOMyOHl8cIuFg" name="id">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
@@ -281,7 +281,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_fPxYUFHAEeOMyOHl8cIuFg" name="Change">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_fPxYUFHAEeOMyOHl8cIuFg" name="change">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_iqGKIFHAEeOMyOHl8cIuFg" name="name">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedParameter>
@@ -401,7 +401,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_j2LQ0FHCEeOMyOHl8cIuFg" name="fileLoad"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_FQYos1HBEeOMyOHl8cIuFg" name="" memberEnd="_FQYotFHBEeOMyOHl8cIuFg _FQYosFHBEeOMyOHl8cIuFg">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_FQYotFHBEeOMyOHl8cIuFg" name="" type="_e1QgMFG4EeOMyOHl8cIuFg" aggregation="shared" association="_FQYos1HBEeOMyOHl8cIuFg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_FQYotFHBEeOMyOHl8cIuFg" name="" type="_e1QgMFG4EeOMyOHl8cIuFg" association="_FQYos1HBEeOMyOHl8cIuFg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FQYotVHBEeOMyOHl8cIuFg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FQYotlHBEeOMyOHl8cIuFg" value="1"/>
     </ownedEnd>
@@ -411,7 +411,7 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_KPSys1HBEeOMyOHl8cIuFg" name="" memberEnd="_KPSytFHBEeOMyOHl8cIuFg _KPSysFHBEeOMyOHl8cIuFg">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_KPSytFHBEeOMyOHl8cIuFg" name="" type="_lWJWIFG_EeOMyOHl8cIuFg" aggregation="shared" association="_KPSys1HBEeOMyOHl8cIuFg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_KPSytFHBEeOMyOHl8cIuFg" name="" type="_lWJWIFG_EeOMyOHl8cIuFg" association="_KPSys1HBEeOMyOHl8cIuFg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KPSytVHBEeOMyOHl8cIuFg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KPSytlHBEeOMyOHl8cIuFg" value="1"/>
     </ownedEnd>
@@ -456,20 +456,20 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_QijKYFHKEeOMyOHl8cIuFg" name="Run"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_QijKYFHKEeOMyOHl8cIuFg" name="run"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_XRhj0FHKEeOMyOHl8cIuFg" name="" memberEnd="_XRhj0VHKEeOMyOHl8cIuFg _XRgVsFHKEeOMyOHl8cIuFg">
     <ownedEnd xmi:type="uml:Property" xmi:id="_XRhj0VHKEeOMyOHl8cIuFg" name="" type="_hhf0QFHJEeOMyOHl8cIuFg" association="_XRhj0FHKEeOMyOHl8cIuFg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XRhj0lHKEeOMyOHl8cIuFg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XRhj01HKEeOMyOHl8cIuFg" value="1"/>
     </ownedEnd>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_XRgVsFHKEeOMyOHl8cIuFg" name="" type="_5dtVwFHJEeOMyOHl8cIuFg" aggregation="shared" association="_XRhj0FHKEeOMyOHl8cIuFg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_XRgVsFHKEeOMyOHl8cIuFg" name="" type="_5dtVwFHJEeOMyOHl8cIuFg" association="_XRhj0FHKEeOMyOHl8cIuFg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XRgVsVHKEeOMyOHl8cIuFg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XRgVslHKEeOMyOHl8cIuFg" value="1"/>
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_hybWw1HKEeOMyOHl8cIuFg" name="" memberEnd="_hybWxFHKEeOMyOHl8cIuFg _hybWwFHKEeOMyOHl8cIuFg">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_hybWxFHKEeOMyOHl8cIuFg" name="" type="_88KIsFHAEeOMyOHl8cIuFg" aggregation="shared" association="_hybWw1HKEeOMyOHl8cIuFg">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_hybWxFHKEeOMyOHl8cIuFg" name="" type="_88KIsFHAEeOMyOHl8cIuFg" association="_hybWw1HKEeOMyOHl8cIuFg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hybWxVHKEeOMyOHl8cIuFg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hybWxlHKEeOMyOHl8cIuFg" value="1"/>
     </ownedEnd>
