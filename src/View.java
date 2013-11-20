@@ -11,9 +11,8 @@ public class View {
 		try
 		{
 			String command="";
-			/*Controller c=new Controller();
-			c.FileLoad();*/
 			Command comm=new Command();
+			comm.fileLoad();
 			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 			while (!command.equals("Exit"))
 			{

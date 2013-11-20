@@ -12,17 +12,20 @@ public class Command {
 	private String command;
 	private Controller c=new Controller();
 	
-	void Command()
+	public void Command()
 	{
 		this.command=command;
-		c.fileLoad();
 		
 	}
 	void setCommand(String command)
 	{
 		this.command=command;
+		
 	}
-	
+	void fileLoad()
+	{
+		this.c.fileLoad();
+	}
 	void Run()
 	{
 		try
@@ -34,7 +37,7 @@ public class Command {
 				System.out.println("Name, Phone, Address, ID\n");
 				String comm=in.readLine();
 				String param[]=comm.split(", ");
-				c.addToCustomer(param[0], param[1], param[2], Integer.parseInt(param[3]));
+				this.c.addToCustomer(param[0], param[1], param[2], Integer.parseInt(param[3]));
 			}
 		
 			if(command.equals("Add_Order"))
@@ -42,7 +45,7 @@ public class Command {
 				System.out.println("Number Order, Number Customer, Date, Amount Order, ID ");
 				String comm=in.readLine();
 				String param[]=comm.split(", ");
-				c.addToOrder(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
+				this.c.addToOrder(Integer.parseInt(param[0]), Integer.parseInt(param[1]),param[2], 
 						Integer.parseInt(param[3]), Integer.parseInt(param[4]));
 			
 			}
@@ -50,9 +53,9 @@ public class Command {
 			if(command.equals("Print_Order"))
 			{
 				for(int i=0;i<c.mo.getOrder().size();i++)
-					System.out.println(c.mo.getOrder().get(i).getNumber()+"\t"+c.mo.getOrder().get(i).getCustomer()+
-							"\t"+c.mo.getOrder().get(i).getDate()+"\t"+c.mo.getOrder().get(i).getSumm()+"\t"+
-									c.mo.getOrder().get(i).getId());
+					System.out.println(this.c.mo.getOrder().get(i).getNumber()+"\t"+this.c.mo.getOrder().get(i).getCustomer()+
+							"\t"+this.c.mo.getOrder().get(i).getDate()+"\t"+this.c.mo.getOrder().get(i).getSumm()+"\t"+
+							this.c.mo.getOrder().get(i).getId());
 			}
 			
 			if(command.equals("Print_Customer"))
