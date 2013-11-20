@@ -12,9 +12,9 @@ public class Command {
 	private String command;
 	private Controller c=new Controller();
 	
-	public void Command()
+	public  Command()
 	{
-		this.command=command;
+		this.command="";
 		
 	}
 	void setCommand(String command)
@@ -119,7 +119,7 @@ public class Command {
 			case "Add_Customer": {this.addCustomer(in);break;}
 			case "Print_Order": {this.printOrder();break;}
 			case "Add_Order": {this.addOrder(in);break;}
-			case "Print_Customer": {this.printOrder();break;}
+			case "Print_Customer": {this.printCustomer();break;}
 			case "Commit":{this.commit();break;}
 			case "Delete_Order": {this.deleteOrder(in);break; }
 			case "Delete_Customer": {this.deleteCustomer(in); break;}
