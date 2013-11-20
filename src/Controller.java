@@ -45,6 +45,19 @@ public class Controller {
 	 */
 	public void addToOrder(int number, int customer, String date, int summ, int id)
 	{
+		if(this.mc.customer.size()==0)
+		{
+			System.out.println("Customer is empty.");
+			return;
+		}
+		for(Customer item: this.mc.customer)
+		{
+			if(item.getId()!=id)
+			{
+				System.out.println("ID doesn't in Customer.");
+				return;
+			}
+		}
 		for(Order item : this.mo.order)
 		{
 			if(item.getId()==id)
