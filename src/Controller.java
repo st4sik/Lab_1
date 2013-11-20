@@ -66,7 +66,7 @@ public class Controller {
 				return;
 			}
 		}
-		this.mo.Add(number, customer, date, summ, id);
+		this.mo.add(number, customer, date, summ, id);
 		System.out.println("Record is added.");
 	}
 	
@@ -76,7 +76,7 @@ public class Controller {
 	 */
 	public void deleteFromOrder(int id)
 	{
-		if(mo.Delete(id))
+		if(mo.delete(id))
 		{
 			System.out.println("Record is deleted.");
 		}
@@ -86,7 +86,7 @@ public class Controller {
 	
 	public void changeToOrder(int number, int customer, String date, int summ, int id)
 	{
-		if (mo.Change(number, customer, date, summ, id))
+		if (mo.change(number, customer, date, summ, id))
 		{
 			System.out.println("Record is changed.");
 		}
@@ -109,7 +109,7 @@ public class Controller {
 				return;
 			}
 		}
-		this.mc.Add(name, mobile, address, id);
+		this.mc.add(name, mobile, address, id);
 		System.out.println("Record is added.");
 	}
 	/**
@@ -118,7 +118,7 @@ public class Controller {
 	 */
 	public void deleteFromCustomer(int id)
 	{
-		if(mc.Delete(id))
+		if(mc.delete(id))
 		{
 			System.out.println("Record is deleted.");
 		}
@@ -128,7 +128,7 @@ public class Controller {
 
 	public void changeToCustomer(String name, String mobile, String address, int id)
 	{
-		if (mc.Change(name, mobile, address, id))
+		if (mc.change(name, mobile, address, id))
 		{
 			System.out.println("Record is changed.");
 		}

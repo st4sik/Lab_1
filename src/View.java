@@ -19,7 +19,7 @@ public class View {
 				System.out.println("Manual: Help. Enter the command: \n");
 				command=in.readLine();
 				comm.setCommand(command);
-				comm.Run();		
+				comm.run();		
 			}
 		}
 		catch(IOException e)

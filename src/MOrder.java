@@ -16,7 +16,7 @@ ArrayList<Order> order=new ArrayList<Order>();
 		return order;
 	}
 	
-	public void Add(int number, int customer, String date, int summ, int id)
+	public void add(int number, int customer, String date, int summ, int id)
 	{
 		Order order=new Order();
 		order.setNumber(number);
@@ -27,7 +27,7 @@ ArrayList<Order> order=new ArrayList<Order>();
 		this.order.add(order);	
 	}
 	
-	public boolean Delete(int id)
+	public boolean delete(int id)
 	{
 		for(int i=0;i<this.order.size();i++)
 		{
@@ -40,7 +40,7 @@ ArrayList<Order> order=new ArrayList<Order>();
 		return false;
 	}
 	
-	public boolean Change(int number, int customer, String date, int summ, int id)
+	public boolean change(int number, int customer, String date, int summ, int id)
 	{
 		for (int i=0;i<this.order.size();i++)
 		{

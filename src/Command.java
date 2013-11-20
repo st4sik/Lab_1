@@ -26,7 +26,7 @@ public class Command {
 	{
 		this.c.fileLoad();
 	}
-	void Run()
+	void run()
 	{
 		try
 		{

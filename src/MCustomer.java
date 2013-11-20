@@ -15,7 +15,7 @@ public class MCustomer {
 		return customer;
 	}
 	
-	public void Add(String name, String mobile, String address, int id)
+	public void add(String name, String mobile, String address, int id)
 	{
 		Customer cus=new Customer();
 		cus.setAddress(address);
@@ -26,7 +26,7 @@ public class MCustomer {
 		
 	}
 	
-	public boolean Delete(int id)
+	public boolean delete(int id)
 	{
 		for(int i=0;i<this.customer.size();i++)
 		{
@@ -39,7 +39,7 @@ public class MCustomer {
 		return false;
 	}
 	
-	public boolean Change(String name,String mobile, String address, int id)
+	public boolean change(String name,String mobile, String address, int id)
 	{
 		for (int i=0;i<this.customer.size();i++)
 		{
